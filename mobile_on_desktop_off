@@ -1,0 +1,25 @@
+@media screen and (max-width: 767px) {
+  .mobile_on
+  {
+  display:block;
+  }
+  
+  .desktop_on
+  {
+  display:none;
+  }
+  
+}
+
+@media screen and (min-width: 768px) {
+  .mobile_on
+  {
+  display:none;
+  }
+  
+  .desktop_on
+  {
+  display:block;
+  }
+  
+}
