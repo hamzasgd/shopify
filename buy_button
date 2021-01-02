@@ -1,0 +1,6 @@
+{% form 'product', product,id:"AddToCartForm",class:"cart clearfix" %}
+ <div class="payment-btn">
+                           {{ form | payment_button }}
+                             </div>
+                             
+{% endform %}
