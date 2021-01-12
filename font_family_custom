@@ -1,0 +1,16 @@
+@font-face {
+   font-family: 'schadowlight';
+   src: url('https://cdn.shopify.com/s/files/1/0506/6499/7059/files/schadowlightbt.eot?v=1610430059');
+   src: url('https://cdn.shopify.com/s/files/1/0506/6499/7059/files/schadowlightbt.eot?v=1610430059') format('embedded-opentype'),
+        url('https://cdn.shopify.com/s/files/1/0506/6499/7059/files/schadowlightbt.woff?v=1610430059') format('woff'),
+        url('https://cdn.shopify.com/s/files/1/0506/6499/7059/files/schadowlightbt.ttf?v=1610430059') format('truetype'),
+        url('https://cdn.shopify.com/s/files/1/0506/6499/7059/files/schadowlightbt.svg?v=1610430059') format('svg');
+   font-weight: normal;
+   font-style: normal;
+  }
+
+.section-title-79609495615
+
+{
+font-family: 'schadowlight';
+}
