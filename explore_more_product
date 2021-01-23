@@ -1,0 +1,84 @@
+{%- include 'colllection-related' -%}
+
+
+ <div id="collection-related">
+ 
+  <h4 class="mb-4">Explore more products</h4>
+
+  <div class="js-slick-carousel">
+   
+       
+    <div class="row slick_content" data-section-id="collection-related{{section.id}}" data-section-type="slickCarousels" data-dots="true" data-rows="1" data-slidesToShow="4" data-infinite="false">
+       {%- assign collection_produclists = collection.products -%}
+        {% for block in section.blocks %}
+      <div class="col">
+        <a href="{{block.settings.url_button_name}}">
+        <img src="{{block.settings.image_intro| img_url : 'master'}}" ></a>
+       
+        <h4> <a href="{{block.settings.url_button_name}}">{{block.settings.text_type}}</a></h4>
+       
+      </div>
+        {%- endfor -%}
+   
+    </div>
+  </div>
+ 
+</div>
+
+
+<script>
+ 
+  $(document).ready(function(){
+ 
+    $(".js-slick-carousel").slick();
+   
+  })
+ 
+</script>
+
+{
+"type": "text",
+"id": "relate_products_title",
+"label": "Title",
+"default": "Related product"
+}
+],
+ "blocks": [
+{
+      "type": "collection",
+      "name": "collection",
+ "settings": [
+        {
+        "type" : "text",
+        "id": "text_type",
+        "label" : "COLLECTION-NAME"
+     
+        },
+        {
+          "type": "url",
+          "id": "url_button_name",
+          "label": "URL button name"
+         
+        },
+
+        {
+        "type" : "image_picker",
+        "id": "image_intro",
+        "label" : "Image Introduce",
+        "info" : "549x596px recommended"
+        }
+       
+]
+}
+],
+"presets": [
+    {
+      "name": "collection",
+       "blocks": [
+       {
+         "type":"collection"
+}
+ 
+      ]
+    }
+  ]
