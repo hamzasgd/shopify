@@ -1,0 +1,5 @@
+{% for t in product.tags %}
+     {% if t contains 'bulk-buy-discounts' %}     
+            <div class="product__label--bulk-buy"><span>Bulk Buy</span></div>      
+     {% endif %}
+  {% endfor %}
