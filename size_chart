@@ -1,0 +1,73 @@
+
+
+
+<!-- Modal -->
+<div style="padding:50px;opacity:1;display:block;" class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="exampleModalLabel">Size Chart</h5>
+<!--         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button> -->
+      </div>
+      <div class="text-center modal-body">
+        {% for t in product.tags %}
+     {% if t contains 'chart_1' %}     
+       <img width="800" heigt="800" src="https://cdn.shopify.com/s/files/1/0331/6649/1788/files/sizechartgirls_ce1a2c1e-30b5-4d80-90c4-a69b55e9f729.jpg?v=1611308242">   
+     {% endif %}
+        
+          {% if t contains 'chart_2' %}     
+       <img width="800" heigt="800" src="https://cdn.shopify.com/s/files/1/0331/6649/1788/files/skirt_top.jpg?v=1611569805">   
+     {% endif %}
+        
+        
+        {% if t contains 'chart_3' %}     
+       <img width="800" heigt="800" src="https://cdn.shopify.com/s/files/1/0259/6788/6385/files/3.jpeg?v=1611730457">   
+     {% endif %}
+        
+        
+        
+          {% if t contains 'chart_4' %}     
+<img width="800" heigt="800" src="https://cdn.shopify.com/s/files/1/0331/6649/1788/files/unnamed_2a14e53b-68a9-4bdf-bca7-188dfd4eb84a.png?v=1611397983">
+     {% endif %}
+        
+        
+  {% endfor %}
+        
+       
+        
+      </div>
+      <div class="modal-footer">
+        <button style="display: block;text-align: center;margin: 0 auto;margin-bottom: 10px;" type="button" class="size_btn_close btn btn-secondary ml-10" data-dismiss="modal">Close</button>
+<!--         <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ************************88 -->
+
+
+<!--   <div class="wrapper">
+
+    <button class="modal-toggle">Show modal</button>
+  </div>
+  
+  <div class="modal">
+    <div class="modal-overlay modal-toggle"></div>
+    <div class="modal-wrapper modal-transition">
+      <div class="modal-header">
+        <button class="modal-close modal-toggle"><svg class="icon-close icon" viewBox="0 0 32 32"><use xlink:href="#icon-close"></use></svg></button>
+        <h2 class="modal-heading">This is a modal</h2>
+      </div>
+      
+      <div class="modal-body">
+        <div class="modal-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit eum delectus, libero, accusantium dolores inventore obcaecati placeat cum sapiente vel laboriosam similique totam id ducimus aperiam, ratione fuga blanditiis maiores.</p>
+          <button class="modal-toggle">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ -->
