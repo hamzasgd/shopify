@@ -233,6 +233,12 @@ $(document).on('click','.size_btn', function(e) {
     
 </script>
   
+    <!-- Size Chart Button-->
+<div class="size-cht"><span><strong data-mce-fragment="1">Size Chart: </strong><button type="button" class="btn btn-primary size_btn" data-toggle="modal" data-target="#exampleModal">
+  Click here
+</button></span>
+</div>
 
+        <!-- Size Chart Button-->
 
 
