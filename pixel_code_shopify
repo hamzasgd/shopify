@@ -32,3 +32,24 @@ src="https://www.facebook.com/tr?id=576801743273768&ev=PageView
 
 
   <!-------------------------PURCHASE CODE STARTS---------------------------------->
+  
+  <!-- ADD TO CART Pixel code--->
+  
+  <script type="text/javascript">
+$( '.btn--add-to-cart' ).click(function() {
+fbq('track', 'AddToCart', {
+    value: {{ product.price | money_without_currency }},
+    currency: '{{ shop.currency }}',
+    content_ids: '[{{ product.id }}]',
+	content_name: '{{ product.title }}',
+	content_type: 'product_group',
+});});
+</script>
+
+  <!-- ADD TO CART Pixel Code--->
+
+  
+  
+  
+  
+  
