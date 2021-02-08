@@ -17,6 +17,10 @@ src="https://www.facebook.com/tr?id=576801743273768&ev=PageView
 &noscript=1"/>
 </noscript>
   
+  
+  <!-------------------------PURCHASE CODE STARTS---------------------------------->
+  
+  
   <script>
    fbq('track', 'Purchase', {
     value: {{ total_price | money_without_currency | remove:',' }},
@@ -25,3 +29,6 @@ src="https://www.facebook.com/tr?id=576801743273768&ev=PageView
   </script>
   
 <!-- End Facebook Pixel Code --> 
+
+
+  <!-------------------------PURCHASE CODE STARTS---------------------------------->
