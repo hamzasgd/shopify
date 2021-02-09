@@ -48,8 +48,23 @@ fbq('track', 'AddToCart', {
 
   <!-- ADD TO CART Pixel Code--->
 
+<!-- Buy Now code starts--->
+  $('.shopify-payment-button__button').click(function() {
+  
+
+fbq('track', 'AddToCart', {
+    value: product_price,
+    currency: '{{ shop.currency }}',
+    content_ids: '[{{ product.id }}]',
+	content_name: '{{ product.title }}',
+	content_type: 'product_group'
+});
+
+    fbq('track', 'InitiateCheckout');
+    
+});
   
   
   
-  
+  <!-- Buy Now code ends--->
   
