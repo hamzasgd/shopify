@@ -1,0 +1,48 @@
+      <!-- pair-it-up.liquid -->
+      
+      {% if product.metafields.info.tab3 != blank %}
+<div id="pair-it-up">
+ 
+  <h4 class="mb-4"style="padding-left: 35px;">Pair with </h4>
+
+  
+  <div class="js-slick-carousel-1"style="padding:40px;" >
+    
+       
+    <div class="row slick_content" data-section-id="collection-related{{section.id}}" data-section-type="slickCarousels" data-dots="true" data-rows="1" data-slidesToShow="4" data-infinite="false">
+      
+
+      {% assign pair_product = product.metafields.info.tab3 | split: "," %}
+
+      {% for indproduct in pair_product %}
+ 
+
+      <div class="col">
+        <a href="{{ all_products[indproduct].url }}">
+        <img src="{{all_products[indproduct].featured_image | img_url : 'master'}}" ></a>
+       
+        <h4> <a href="{{ all_products[indproduct].url }}">{{all_products[indproduct].title}}</a></h4>
+        
+      </div> 
+        {%- endfor -%}
+   
+    </div>
+  </div>
+ 
+</div>
+
+
+<script>
+  
+  $(document).ready(function(){
+  
+    $(".js-slick-carousel-1").slick();
+    
+  })
+  
+</script>
+{% endif %}
+
+
+<!-- Meta Tag Editor-->
+https://jazba-curators.myshopify.com/admin/bulk?resource_name=Product&edit=metafields.info.tab3
