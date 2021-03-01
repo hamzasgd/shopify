@@ -1,0 +1,158 @@
+  
+<b> {{ linklists.men-apparel.title }} </b>
+
+<ul>
+  
+      {% for link in linklists.men-apparel.links %}
+
+<li class="test_schadowlight"><a href="{{ link.url | escape }}">{{ link.title | escape }}</a></li>
+{% endfor %}
+  
+        </ul>
+
+
+  
+<b> {{ linklists.home-lifestyle.title }} </b>
+
+<ul>
+  
+      {% for link in linklists.home-lifestyle.links %}
+
+<li><a href="{{ link.url | escape }}">{{ link.title | escape }}</a></li>
+{% endfor %}
+  
+        </ul>
+
+
+<b> {{ linklists.all-products.title }} </b>
+
+<ul>
+  
+      {% for link in linklists.all-products.links %}
+
+<li><a href="{{ link.url | escape }}">{{ link.title | escape }}</a></li>
+{% endfor %}
+  
+        </ul>
+
+  
+<div class="filters-toolbar">
+            <div class="filters-toolbar__item size-filter">
+                {% assign variant_sizes = "" %}
+                {% assign variant_lengths = "" %}
+                {% for product in collection.products %}
+                    {% for variant in product.variants %}
+                        {% if variant.available %}
+                            {% assign pro_size = variant.option1 | strip %}
+                            {% assign variant_sizes = variant_sizes | append: pro_size | append: ',' %}
+
+                            {% assign pro_length = variant.option3 | strip %}
+                            {% assign variant_lengths = variant_lengths | append: pro_length | append: ',' %}
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+                {% assign variant_sizes = variant_sizes | split: ',' | uniq %}
+                {% assign variant_lengths = variant_lengths | split: ',' | uniq %}
+
+                {% comment %}
+                    {% assign variant_sizes = variant_sizes | split: ',' | uniq | join: ', ' %}
+                    {% assign variant_sizes = 'xxs, xs, s, m, l' | split: ',' %}
+                    {% assign variant_lengths = variant_lengths | split: ',' | uniq | join: ', ' %}
+                    {% assign length = 'Short, 3/4, 7/8, Long' | split: ',' %}
+                {% endcomment %}
+
+                {% if variant_sizes.size > 0 %}
+                <ul>
+                  <h5 class="filter-title">Size</h5>
+                    {% assign selected_size = "" %}
+                     <!-- <li>{{ 'All' | link_to:collection.url }}</li> -->
+                    {% for t in variant_sizes %}
+                        {% assign variant_size = t | strip %}
+                        {% if current_tags contains variant_size %}
+                            <li class="active {{ variant_size }}">{{ variant_size | link_to_remove_tag: variant_size }}</li>
+                            {% assign selected_size = variant_size %}
+                            {% comment %}
+                                {% elsif collection.all_tags contains variant_size %}
+                            {% endcomment %}
+                      {% else %}
+                            <li class="{{ variant_size }}">{{ variant_size | link_to_add_tag: variant_size }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+            <div class="filters-toolbar__item text-right length-filter">
+                {% if variant_lengths.size > 0 %}
+                <ul>
+                  <h5 class="filter-title">Length</h5>
+                    {% assign selected_length = "" %}
+                    <!-- <li>{{ 'All' | link_to:collection.url }}</li> -->
+                    {% for t in variant_lengths %}
+                        {% assign variant_length = t | strip %}
+                        {% if current_tags contains variant_length %}
+                            <li class="active">{{ variant_length | link_to_remove_tag: variant_length }}</li>
+                            {% assign selected_length = variant_length %}
+                        {% comment %}
+                            {% elsif collection.all_tags contains variant_length %}
+                        {% endcomment %}
+                      {% else %}
+                            <li>{{ variant_length | link_to_add_tag: variant_length }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+</div>
+
+
+{% comment %}
+{%- if settings.categories_block_enable -%}
+<!-- sidebar-categories -->
+<div id="categories_block">
+  {%- if settings.categories_block_title != blank -%}
+  <h5 class="title_block" data-toggle="collapse" data-target="#ul_list_categories" aria-expanded="{% if settings.categories_block_collapse %}true{% else %}false{% endif %}">
+    {{ settings.categories_block_title }}
+  </h5>
+  {%- endif -%}
+  <div class="block_content mb-4">
+    <ul id="ul_list_categories" class="collapse list-unstyled {% if settings.categories_block_collapse %}show{% endif %}">
+      {%- if settings.categories_block_items == blank -%}
+      {%- for category in collections limit:settings.categories_block_number -%}
+      <li {% if collection.handle == category.handle %} class="active" {% endif %}>
+        <a href="{{ category.url }}" title="{{ category.title }}">
+          {{ category.title }}
+          {%- if settings.categories_block_productcount -%}
+          {%- if category.all_products_count > 0 -%}
+          <span id="apolloQty{{ category.id }}" class="apolloQty float-right">{{ category.all_products_count }}</span>
+          {%- endif -%}
+          {%- endif -%}
+        </a>
+      </li>
+      {%- endfor -%}
+      {%- else -%}
+      {%- assign category_items = settings.categories_block_items | split:"," -%}
+      {%- for category in category_items -%}
+      {%- assign categoryCustom = category | downcase -%}
+      {%- for category_site in collections -%}
+      {%- assign cat = category_site.title | downcase -%}
+      {%- if categoryCustom contains cat -%}
+      <li {% if collection.handle == category_site.handle %} class="active" {% endif %}>
+        <a href="{{ category_site.url }}" title="{{ category_site.title }}">
+          {{ category_site.title }}
+          {%- if settings.categories_block_productcount -%}
+          {%- if category_site.all_products_count > 0 -%}
+          <span id="appolloQty{{ category_site.id }}" class="apolloQty float-right">{{ category_site.all_products_count }}</span>
+          {%- endif -%}
+          {%- endif -%}
+        </a>
+      </li>
+      {%- endif -%}
+      {%- endfor -%}
+      {%- endfor -%}
+      {%- endif -%}
+    </ul>
+  </div>
+</div>
+{%- endif -%}
+
+{% endcomment %}
