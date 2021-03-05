@@ -1,0 +1,32 @@
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>  
+<script src="https://raw.githubusercontent.com/carhartl/jquery-cookie/master/src/jquery.cookie.js"> </script>
+
+
+  <script>
+     // Quick & dirty toggle to demonstrate modal toggle behavior
+$(document).ready(function(e) {
+//   e.preventDefault();
+  
+ if ($.cookie('noShowWelcome'))
+ {
+   
+
+//    $('.welcome').hide();
+ }
+    else {
+       
+       
+  $("#exampleModal").addClass("is-visible");
+//   }, 1000); 
+      
+            $.cookie('noShowWelcome', true);    
+       
+    }
+  
+
+ 
+  
+  
+  
+  //$('.modal').toggleClass('is-visible');
+}); 
