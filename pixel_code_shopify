@@ -60,7 +60,13 @@ fbq('track', 'AddToCart', {
 	content_type: 'product_group'
 });
 
+   
+    
     fbq('track', 'InitiateCheckout');
+fbq('track', 'AddPaymentInfo', { 
+		value: {{ total_price | money_without_currency | remove:',' }},
+		currency: '{{ shop.currency }}'
+    	});
     
 });
   
