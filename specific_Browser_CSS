@@ -1,0 +1,7 @@
+
+/* Mozilla only*/
+@-moz-document url-prefix() {
+  h1 {
+    color: red;
+  }
+}
