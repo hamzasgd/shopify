@@ -1,0 +1,28 @@
+<script>
+  
+  function variant_change()
+  {
+ // alert($('select[name="id"]').val());
+    setTimeout(function() {
+    var option = $('select[name="id"] option:selected').attr('data_desc');
+//      alert(option);
+      
+      $("#dynamic_variant_desc").html(option);
+    
+    },300);
+  
+  }
+</script>
+
+
+
+
+  <select name="id" data-productid="{{pid}}" id="product-select{{call_cl}}" class="product-select_pr product-form__variants hide hidden">
+                          {%- for variant in pr_variants -%}
+                              {%- if variant.available -%}
+                                <option {% if variant.id == current_variant.id %} selected="selected" {% endif %} value="{{ variant.id }}">{{ variant.title | escape }}</option>
+                              {%- else -%}
+                                <option value="{{ variant.id }}"{%- if remove_soldout %} disabled="disabled"{%- endif %} class="nt_sold_out">{{ variant.title | escape }}</option>
+                              {%- endif -%}
+                            {%- endfor -%}
+                       </select>
