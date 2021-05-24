@@ -1,0 +1,8 @@
+Ginni Tab Variant Bulk
+https://shop-ginni.myshopify.com/admin/bulk?edit=metafields.add_des.add_des%3Astring&resource_name=Product
+
+https://shop-ginni.myshopify.com/admin/bulk?edit=metafields.short_desc.short_desc%3Astring&show=full_title&resource_name=ProductVariant
+
+
+If variant or product wise add variant id and product id accordingly link generator
+https://madeforcode.com/pages/shopify-metafield-build-editor
