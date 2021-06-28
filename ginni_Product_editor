@@ -6,3 +6,12 @@ https://shop-ginni.myshopify.com/admin/bulk?edit=metafields.short_desc.short_des
 
 If variant or product wise add variant id and product id accordingly link generator
 https://madeforcode.com/pages/shopify-metafield-build-editor
+
+
+
+https://shop-ginni.myshopify.com/admin/bulk?edit=metafields.short_description.short_description%3Astring&resource_name=Product&ids=6783760040117
+
+
+For the new template
+add_des_1
+short_desc_1
